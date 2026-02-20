@@ -9,44 +9,52 @@
 body {
     margin:0;
     padding:0;
-    height:100vh;
-    overflow:hidden;
     font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at bottom, #1b2735 0%, #090a0f 100%);
-    color:white;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    overflow:hidden;
+}
+
+.container {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    padding:20px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.image-section {
+    flex:1;
     text-align:center;
 }
 
-.stars {
-    width:100%;
-    height:100%;
-    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-    position:absolute;
-    top:0;
-    left:0;
-    animation: moveStars 100s linear infinite;
+.image-section img {
+    width:85%;
+    max-width:420px;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
 
-@keyframes moveStars {
-    from {background-position:0 0;}
-    to {background-position:10000px 5000px;}
-}
-
-.content {
-    position:relative;
-    top:35%;
-    animation: fadeIn 4s ease-in-out;
+.text-section {
+    flex:1;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
 h1 {
-    font-size:50px;
-    margin-bottom:20px;
-    color:#ff4d6d;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+h2 {
+    font-size:32px;
+    margin-bottom:15px;
 }
 
 p {
-    font-size:24px;
-    margin:10px 0;
+    font-size:20px;
+    margin:8px 0;
 }
 
 @keyframes fadeIn {
@@ -56,7 +64,6 @@ p {
 
 .heart {
     position:absolute;
-    color:#ff4d6d;
     font-size:20px;
     animation: floatUp 6s linear infinite;
 }
@@ -66,54 +73,45 @@ p {
     100% {transform: translateY(-10vh); opacity:0;}
 }
 
-button {
-    margin-top:30px;
-    padding:12px 25px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:#ff4d6d;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover {
-    background:#ff1e4d;
+/* Mobile */
+@media(max-width:768px){
+    .container {
+        flex-direction:column;
+        height:auto;
+        margin-top:30px;
+    }
+    .image-section img {
+        width:70%;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="stars"></div>
+<div class="container">
+    <div class="image-section">
+        <img src="couple.jpeg" alt="Jayasri & Santhosh">
+    </div>
 
-<div class="content">
-    <h1>Jayasri ❤️ Santhosh</h1>
-    <p>My dear Jayasri,</p>
-    <p>You are the most beautiful chapter of my life.</p>
-    <p>Every heartbeat of mine whispers your name.</p>
-    <p>Forever Yours,</p>
-    <h2>Santhosh</h2>
-
-    <button onclick="playMusic()">Click Here ❤️</button>
+    <div class="text-section">
+        <h1>Jayasri ❤️ Santhosh</h1>
+        <p>My dear Jayasri,</p>
+        <p>You are the most beautiful part of my life.</p>
+        <p>Every heartbeat of mine whispers your name.</p>
+        <p>With you, every moment feels magical.</p>
+        <h3>Forever Yours,</h3>
+        <h2>Santhosh</h2>
+    </div>
 </div>
 
-<audio id="bgMusic" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-function playMusic() {
-    document.getElementById("bgMusic").play();
-}
-
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     document.body.appendChild(heart);
 
     setTimeout(() => {
@@ -121,8 +119,8 @@ function createHeart() {
     }, 6000);
 }
 
-setInterval(createHeart, 500);
+setInterval(createHeart, 800);
 </script>
 
 </body>
-</html>  
+</html>
