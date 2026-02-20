@@ -12,24 +12,34 @@ body {
     height:100vh;
     overflow:hidden;
     font-family: 'Comic Sans MS', cursive;
-    background: linear-gradient(to bottom, #ffd6e0, #fff1f5);
-    text-align:center;
-    color:#ff4081;
+    background: url('Yaanvi.jpeg') no-repeat center center/cover;
+    color:white;
 }
 
-.container {
-    position:relative;
-    top:30%;
+.overlay {
+    background: rgba(0,0,0,0.45);
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
     animation: fadeIn 3s ease-in-out;
 }
 
 h1 {
-    font-size:40px;
+    font-size:42px;
+    margin:10px 0;
+}
+
+h2 {
+    font-size:34px;
+    margin:10px 0;
 }
 
 p {
     font-size:22px;
-    margin:10px 0;
+    margin:8px 0;
 }
 
 @keyframes fadeIn {
@@ -37,10 +47,11 @@ p {
     to {opacity:1; transform:translateY(0);}
 }
 
-.balloon {
+.sparkle {
     position:absolute;
-    font-size:30px;
-    animation: floatUp 6s linear infinite;
+    color:#fff;
+    font-size:18px;
+    animation: floatUp 5s linear infinite;
 }
 
 @keyframes floatUp {
@@ -52,31 +63,32 @@ p {
 
 <body>
 
-<div class="container">
+<div class="overlay">
     <h1>Our Little Princess 👶✨</h1>
     <h2>Yaanvi 💖</h2>
     <p>8 Months of Pure Happiness</p>
     <p>You are our tiny miracle.</p>
     <p>Your smile makes our world brighter 🌸</p>
-    <p>With endless love,</p>
-    <h3>Babai ❤️ Pinni</h3>
+    <p>Every day with you is a blessing.</p>
+    <h3>With Endless Love,</h3>
+    <h2>Amma ❤️ Nanna</h2>
 </div>
 
 <script>
-function createBalloon() {
-    const balloon = document.createElement("div");
-    balloon.classList.add("balloon");
-    balloon.innerHTML = "🎈";
-    balloon.style.left = Math.random() * 100 + "vw";
-    balloon.style.animationDuration = (Math.random() * 3 + 4) + "s";
-    document.body.appendChild(balloon);
+function createSparkle() {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.innerHTML = "✨";
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(sparkle);
 
     setTimeout(() => {
-        balloon.remove();
-    }, 6000);
+        sparkle.remove();
+    }, 5000);
 }
 
-setInterval(createBalloon, 800);
+setInterval(createSparkle, 700);
 </script>
 
 </body>
