@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Yaanvi 👶💖</title>
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    height:100vh;
+    overflow:hidden;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to bottom, #ffd6e0, #fff1f5);
+    text-align:center;
+    color:#ff4081;
+}
+
+.container {
+    position:relative;
+    top:30%;
+    animation: fadeIn 3s ease-in-out;
+}
+
+h1 {
+    font-size:40px;
+}
+
+p {
+    font-size:22px;
+    margin:10px 0;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+.balloon {
+    position:absolute;
+    font-size:30px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(100vh); opacity:1;}
+    100% {transform: translateY(-10vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Our Little Princess 👶✨</h1>
+    <h2>Yaanvi 💖</h2>
+    <p>8 Months of Pure Happiness</p>
+    <p>You are our tiny miracle.</p>
+    <p>Your smile makes our world brighter 🌸</p>
+    <p>With endless love,</p>
+    <h3>Amma ❤️ Nanna</h3>
+</div>
+
+<script>
+function createBalloon() {
+    const balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    balloon.innerHTML = "🎈";
+    balloon.style.left = Math.random() * 100 + "vw";
+    balloon.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(balloon);
+
+    setTimeout(() => {
+        balloon.remove();
+    }, 6000);
+}
+
+setInterval(createBalloon, 800);
+</script>
+
+</body>
+</html>
