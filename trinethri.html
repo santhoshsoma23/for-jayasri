@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Trinethri (Ammulu) 💖</title>
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0c3fc, #f9f586);
+    overflow:hidden;
+}
+
+.container {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    padding:20px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.image-section {
+    flex:1;
+    text-align:center;
+}
+
+.image-section img {
+    width:85%;
+    max-width:420px;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.text-section {
+    flex:1;
+    text-align:center;
+    color:#6a1b9a;
+    padding:20px;
+}
+
+h1 {
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+h2 {
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+p {
+    font-size:20px;
+    margin:8px 0;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+.sparkle {
+    position:absolute;
+    font-size:18px;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(100vh); opacity:1;}
+    100% {transform: translateY(-10vh); opacity:0;}
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+    .container {
+        flex-direction:column;
+        height:auto;
+        margin-top:30px;
+    }
+    .image-section img {
+        width:70%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="image-section">
+        <img src="family.jpeg" alt="Family Photo">
+    </div>
+
+    <div class="text-section">
+        <h1>Our Little Star ✨</h1>
+        <h2>Trinethri (Ammulu) 💖</h2>
+        <p>You are the sparkle in our eyes</p>
+        <p>and the joy in our hearts.</p>
+        <p>Your laughter fills our home with light.</p>
+        <p>You are our blessing, our happiness,</p>
+        <p>and our forever pride.</p>
+        <h3>With all our love,</h3>
+        <h2>Amma ❤️ Nanna</h2>
+    </div>
+</div>
+
+<script>
+function createSparkle() {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.innerHTML = "✨";
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+        sparkle.remove();
+    }, 5000);
+}
+
+setInterval(createSparkle, 800);
+</script>
+
+</body>
+</html>
